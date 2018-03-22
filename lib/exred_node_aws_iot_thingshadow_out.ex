@@ -25,7 +25,7 @@ defmodule Exred.Node.AwsIotThingShadowOut do
   def handle_msg(msg, state) do
     encoded_payload = Poison.encode! msg.payload
     res = AwsIotClient.publish msg.topic, encoded_payload, Map.get(msg, :qos, nil), Map.get(msg, :retain, nil)
-    { {msg | payload: res}, state }
+    { %{msg | payload: res}, state }
   end
 
 end
