@@ -15,7 +15,9 @@ defmodule Exred.Node.AwsIotThingShadowOut do
   }
   ```
   """
-
+  @name "AWS Thing Shadow Out"
+  @category "output"
+  @info @moduledoc
   @config %{
     thing_name: %{type: "string", value: "myThing"}
   }
