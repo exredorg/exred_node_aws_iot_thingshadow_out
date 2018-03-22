@@ -23,6 +23,10 @@ defmodule Exred.Node.AwsIotThingShadowOut do
   }
   @ui_attributes %{fire_button: false, right_icon: "send" }
   
+  use Exred.Library.NodePrototype
+  require Logger
+
+  
   @impl true
   def handle_msg(msg, state) do
     encoded_payload = Poison.encode! msg.payload
