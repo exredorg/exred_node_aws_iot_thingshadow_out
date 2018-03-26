@@ -19,7 +19,8 @@ defmodule Exred.Node.AwsIotThingShadowOut do
   @category "output"
   @info @moduledoc
   @config %{
-    thing_name: %{type: "string", value: "myThing"}
+    thing_name: %{type: "string", value: "myThing"},
+    name: %{value: @name, type: "string", attrs: %{max: 20}}
   }
   @ui_attributes %{fire_button: false, right_icon: "send" }
   
