@@ -1,12 +1,16 @@
 defmodule Exred.Node.AwsIotThingShadowOut.Mixfile do
   use Mix.Project
 
+  @description "Sends updates to AWS IoT Thing Shadows"
+
   def project do
     [
       app: :exred_node_aws_iot_thingshadow_out,
       version: "0.1.0",
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
+      description: @description,
+      package: package(),
       deps: deps()
     ]
   end
@@ -22,6 +26,7 @@ defmodule Exred.Node.AwsIotThingShadowOut.Mixfile do
   defp deps do
     [
       {:exred_library, "~> 0.1.11"},
+      {:ex_doc, "~> 0.18.0", only: :dev, runtime: false}
     ]
   end
   
